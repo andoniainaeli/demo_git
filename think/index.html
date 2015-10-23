@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="form.css" rel="stylesheet">
+</head>
+
+<body>
+
+<form method="post" action="#">
+
+    <p>
+        <label for="firstName">Name :</label>
+    </p>
+    <input id="firstName" type="text" placeholder="First">
+    <input id="lastName" type="text" placeholder="Last">
+    <p id="warningName"></p>
+
+    <p>
+        <label for="email">E-Mail :</label>
+    </p>
+    <input id="email" type="email" class="input" required="required">
+
+    <p>
+        <label for="password">Password :</label>
+    </p>
+    <input id="password" type="password" class="input">
+    <p id="warningPassword"></p>
+
+    <p>
+        <label for="confirmation">Confirmation :</label>
+    </p>
+    <input id="confirmation" type="password" class="input">
+    <p id="warningConfirmation"></p>
+
+    <p>
+        <input type="checkbox" name="agreement" id="agreement">
+        <label for="agreement">I accept incorporation conditions</label>
+        <p id="warningAgreement"></p>
+    </p>
+
+    <input id="submit" type="submit" value="Sign Up">
+
+</form>
+
+<p>
+    <input id="field" type="text" />
+</p>
+
+<table>
+    <tr>
+        <td>keydown</td>
+        <td id="down"></td>
+    </tr>
+    <tr>
+        <td>keypress</td>
+        <td id="press"></td>
+    </tr>
+    <tr>
+        <td>keyup</td>
+        <td id="up"></td>
+    </tr>
+</table>
+
+<script>
+    var field = document.getElementById('field'),
+            down = document.getElementById('down'),
+            press  = document.getElementById('press'),
+            up  = document.getElementById('up');
+
+    field.addEventListener('keydown', function(e) {
+        down.innerHTML = e.keyCode + ' ' + String.fromCharCode(e.keyCode);
+    }, false);
+
+    field.addEventListener('keypress', function(e) {
+        press.innerHTML = e.keyCode + ' ' + String.fromCharCode(e.keyCode);
+    }, false);
+
+    field.addEventListener('keyup', function(e) {
+        up.innerHTML = e.keyCode + ' ' + String.fromCharCode(e.keyCode);
+    }, false);
+</script>
+
+<script src="form.js"></script>
+
+</body>
+</html>
